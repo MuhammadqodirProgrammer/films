@@ -7,10 +7,10 @@ const formEl =document.querySelector("form")
 function domgachiqarator(array, node) {
   let cards = "";
   for (item of array) {
-    cards += `  <div class="card col-lg-3 col-md-10 col-sm-10 col-10 mx-sm-auto hvr-grow mx-3 text-center  shadow-lg p-2  rounded  rounded-4  mt-2 mb-4 " >
+    cards += `  <div class="card col-lg-3 col-md-10 col-sm-10 col-10 mx-sm-auto  hvr-grow mx-3 text-center  shadow-lg p-2  rounded  rounded-4  mt-2 mb-4 " >
      <img src="${item.poster}" class="card-img-top" alt="images">
   <div class="card-body">
-  <h4 class="card-title pt-4">${item.title}</h4>
+  <h4 class="card-title pt-4 film-name">${item.title}</h4>
    <h5 class="card-title overview-text">${item.overview}</h5>
    <h5 class="card-title">${"genres"}:
    ${item.genres}</h5>
