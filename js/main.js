@@ -1,8 +1,8 @@
-
 const cardel = document.querySelector("#card-box");
 const selectEl = document.querySelector("#select");
-const inputEl =document.querySelector("input")
-const formEl =document.querySelector("form")
+const selectEl2 = document.querySelector("#select2");
+const inputEl = document.querySelector("input")
+const formEl = document.querySelector("form")
 
 function domgachiqarator(array, node) {
   let cards = "";
@@ -37,43 +37,53 @@ selectEl.addEventListener("change", () => {
     domgachiqarator(films, cardel);
   }
 });
-console.log(newarr);
-let optionarr =[];
-films.forEach((val)=>{
-  // console.log(val.title);
-  optionarr.push(val.title)
- 
+
+selectEl2.addEventListener("change", (evnt) => {
+  evnt.preventDefault();
+  if (selectEl2.value == "All") {
+    domgachiqarator(films, cardel);
+  } else if (selectEl2.value == "A-Z") {
+    const sortFilm = films.sort((a, b) => {
+      return a.title.charCodeAt(0) - b.title.charCodeAt(0)
+    })
+    domgachiqarator(sortFilm, cardel)
+  } else if (selectEl2.value == "Z-A") {
+    const sortFilm = films.sort((a, b) => {
+      return b.title.charCodeAt(0) - a.title.charCodeAt(0)
+    })
+    domgachiqarator(sortFilm, cardel)
+  }else{
+    domgachiqarator(films, cardel);
+  }
 })
 
-const filled = new Set(optionarr) 
+let optionarr = [];
+films.forEach((val) => {
+  optionarr.push(val.title)
 
-for(i of filled){
-  console.log(i);
-  const options =document.createElement("option");
+})
+
+const filled = new Set(optionarr)
+
+for (i of filled) {
+  // console.log(i);
+  const options = document.createElement("option");
   selectEl.appendChild(options);
   options.textContent = i;
-  options.setAttribute("value",i)
+  options.setAttribute("value", i)
 }
 
-let newarr2= []
+let newarr2 = []
 
-formEl.addEventListener("input", (evt) =>{
+formEl.addEventListener("input", (evt) => {
   evt.preventDefault()
- cardel.innerHTML =""
-  let elinputval =inputEl.value.toLocaleLowerCase();
-// console.log(elinputval);
-films.forEach((el) => {
-  if(el.title.toLocaleLowerCase().includes(elinputval)){
-    newarr2.push(el)
-  }
-});
-domgachiqarator(newarr2,cardel)
-newarr2 =[]
+  cardel.innerHTML = ""
+  let elinputval = inputEl.value.toLocaleLowerCase();
+  films.forEach((el) => {
+    if (el.title.toLocaleLowerCase().includes(elinputval)) {
+      newarr2.push(el)
+    }
+  });
+  domgachiqarator(newarr2, cardel)
+  newarr2 = []
 })
-// console.log(newarr2)
-
-
-
-
-
-

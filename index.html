@@ -59,6 +59,7 @@
             }
 
             #pokemon {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
                 font-family: 'Nosifer', cursive;
                 color: rgb(156, 47, 47);
                 max-width: 500px;
@@ -73,7 +74,7 @@
             }
 
             .container {
-                max-width: 1440px;
+                max-width: 1540px;
             }
 
             .overview-text {
@@ -91,7 +92,10 @@
                 padding: 20px;
                 border: 2px solid white;
             }
-
+      .form-selec,.form-control{
+        padding: 10px;
+        border-radius: 5px;
+      }
             .img-box {
                 width: 100%;
                 height: 100%;
@@ -106,13 +110,21 @@
             <div class="shake-horizontal">
                 <h1 id="pokemon" class="mx-auto text-center mt-5 ">films</h1>
             </div>
-            <form class="form row justify-content-center gap-4 ">
-                <input type="search" class="form-control w-50" placeholder="Search-film">
-            </form>
-            <select class="form-select w-50 mx-auto mt-3" id="select">
-                <option value="All">All</option>
-
-            </select>
+            <div class="bo row justify-content-around mt-3 mb-3">
+                <form class="form row justify-content-center mt-3    mx-auto col-10 col-lg-3 col-md-6  " >
+                    <input type="search" placeholder="Search-Pokemons" class="form-control ">
+                </form>
+                <select class="form-selec  mt-3  mx-auto col-10 col-lg-3 col-md-6  " id="select">
+                    <option value="All">All</option>
+                </select>
+                <select class="form-selec  mt-3  mx-auto col-10 col-lg-3 col-md-6  " id="select2">
+                    <option value="Sorting-Pokemons" disabled selected>Sorting-Pokemons</option>
+                    <option value="All">All</option>
+                    <option value="A-Z">A-Z</option>
+                    <option value="Z-A">Z-A</option>
+                </select>
+            </div>
+        
             <div class="row gap-auto cards  flex-wrap" id="card-box">
 
             </div>
