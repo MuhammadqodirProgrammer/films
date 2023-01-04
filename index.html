@@ -101,6 +101,27 @@
                 height: 100%;
 
             }
+            :root {
+        --text-line-color: #fff;
+        --text-dark-color: #000;
+      }
+      .dark {
+        background-color: rgba(0, 0, 0, 0.678);
+        color: var(--text-line-color);
+      }
+
+      .light {
+        background-color: white;
+        color: var(--text-dark-color);
+      }
+      .mode{
+        width: auto;
+        margin: 0 auto;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        z-index: 55;
+      }
         </style>
     </head>
 
@@ -110,6 +131,11 @@
             <div class="shake-horizontal">
                 <h1 id="pokemon" class="mx-auto text-center mt-5 ">films</h1>
             </div>
+           <div class="text-center">
+            <button class="mode text-center mx-auto ">
+                <img src="./img/moon-svgrepo-com.svg" alt="dark-mode" width="50" />
+            </button>
+           </div>
             <div class="bo row justify-content-around mt-3 mb-3">
                 <form class="form row justify-content-center mt-3    mx-auto col-10 col-lg-3 col-md-6  " >
                     <input type="search" placeholder="Search-Pokemons" class="form-control ">
